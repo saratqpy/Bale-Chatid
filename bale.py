@@ -11,8 +11,15 @@ Chatid : {forward_user_id}'''
 
         update.message.reply_text(all_info)
 
-    else : 
+    elif update.message.forward_from_chat is not None : 
 
+        user_id = str(update.message.forward_from_chat.id)
+        user_name = str(update.message.forward_from_chat.username)
+        all_usr_info = f'''UserName :{user_name}
+Chatid : {user_id}'''
+        update.message.reply_text(all_usr_info)
+
+    elif update.message.forward_from_chat is None and update.message.forward_from is None:
         user_id = str(update.message.chat.id)
         user_name = str(update.message.chat.first_name)
         all_usr_info = f'''UserName :{user_name}
