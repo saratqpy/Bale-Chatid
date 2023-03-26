@@ -26,7 +26,7 @@ Chatid : {user_id}'''
 Chatid : {user_id}'''
         update.message.reply_text(all_usr_info)
 
-updater = Updater(token='1449353184:6wEDwix3usC84ij9OJtf3ATPeVLIYBBCTJYF1hlA',base_url="https://tapi.bale.ai/")
+updater = Updater(token='YOUR TOKEN',base_url="https://tapi.bale.ai/")
 updater.dispatcher.add_handler(MessageHandler(Filters.all,callback=chat_id))
 updater.bot.delete_webhook()
 updater.start_polling(poll_interval=2)
